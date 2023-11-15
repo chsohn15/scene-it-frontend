@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Link } from '@aws-amplify/ui-react';
 import SearchContainer from './components/search/SearchContainer.js'
