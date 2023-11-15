@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { Link } from '@aws-amplify/ui-react';
+import SearchContainer from './components/search/SearchContainer.js'
+
+import {
+  BrowserRouter as Router,
+  Link as ReactRouterLink,
+  Routes,
+  Route,
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ReactRouterLink to="/search" component={Link}>Search</ReactRouterLink>
+      <Routes>
+        <Route path="/search" element={<SearchContainer />} />
+      </Routes>
+    </Router>
   );
 }
 
