@@ -6,14 +6,14 @@ function SearchContainer(){
     const [productions, setProductions] = useState([]);
     
     useEffect( () => {
-        fetch("http://scene-it-api.herokuapp.com/productions")
+        fetch("http://127.0.0.1:3000/productions")
         .then(res => res.json())
         .then(productions => setProductions(productions))
-      });
+      }, []);
 
     return(
         <div>
-            <h1>Search Container</h1>
+            <h1>Browse Films and Movies</h1>
             {productions.map(production => <SearchCard production={production}/>)}
         </div>
     )
