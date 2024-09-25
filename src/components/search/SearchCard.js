@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Flex, Heading } from '@aws-amplify/ui-react';
+// import ProductionContainer from '../production-page/ProductionContainer.js'
 
 import {
   BrowserRouter as Router,
@@ -10,14 +11,12 @@ import {
 
 function SearchCard(props){
     const {title, format, image_url} = props.production
-    console.log(props.production.film_locations[0].scene_description)
+    const titlePath = title.replace(/\s+/g, '-').toLowerCase().replaceAll(",", "")
+
     return(
         <div>
             <img src={image_url} style={{width:200}}/>
-            <ReactRouterLink to={'/' + title} component={Link}>{title}</ReactRouterLink>
-            {/* <Routes>
-                <Route path={'/' + title} element={<SearchContainer />} />
-            </Routes> */}
+            <ReactRouterLink to={'/' + titlePath} state={{production: props.production}} component={Link}>{title}</ReactRouterLink>
         </div>
     )
 }

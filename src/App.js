@@ -1,6 +1,7 @@
 import './App.css';
 import { Link } from '@aws-amplify/ui-react';
 import SearchContainer from './components/search/SearchContainer.js'
+import ProductionContainer from './components/production-page/ProductionContainer.js'
 
 import {
   BrowserRouter as Router,
@@ -15,6 +16,7 @@ function App() {
       <ReactRouterLink to="/search" component={Link}>Search</ReactRouterLink>
       <Routes>
         <Route path="/search" element={<SearchContainer />} />
+        <Route path="/:productionTitle" element={<ProductionContainer />} />
       </Routes>
     </Router>
   );
