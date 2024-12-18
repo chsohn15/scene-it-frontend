@@ -5,7 +5,7 @@ function SearchContainer() {
   const [productions, setProductions] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/productions")
+    fetch("https://scene-it-api-52ad0b1f04cb.herokuapp.com/productions")
       .then((res) => res.json())
       .then((productions) => setProductions(productions));
   }, []);
