@@ -21,7 +21,7 @@ function SearchContainer() {
   }, []);
 
   return (
-    <div>
+    <div class="main">
       <h1>Browse Films and Movies</h1>
       <div class="cards-container">
       {productions.map((production) => (

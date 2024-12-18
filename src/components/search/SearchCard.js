@@ -17,9 +17,9 @@ function SearchCard(props) {
     .replaceAll(",", "");
 
   return (
-    <div>
+    <div class="card">
       <img src={image_url} style={{ width: 200 }} />
-      <ReactRouterLink
+      <ReactRouterLink class="card-link"
         to={"/" + titlePath}
         state={{ production: props.production }}
         component={Link}
