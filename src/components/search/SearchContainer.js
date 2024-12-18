@@ -6,8 +6,18 @@ function SearchContainer() {
 
   useEffect(() => {
     fetch("https://scene-it-api-52ad0b1f04cb.herokuapp.com/productions")
-      .then((res) => res.json())
-      .then((productions) => setProductions(productions));
+      .then((res) => {
+        if (!res.ok) {
+          console.log('There was an error in fetching data');
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then((productions) => setProductions(productions))
+      .catch(error => {
+        // Handle any errors that occurred during the fetch
+        console.error('Fetch error:', error);
+      });
   }, []);
 
   return (

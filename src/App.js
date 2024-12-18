@@ -13,9 +13,9 @@ import {
 function App() {
   return (
     <Router>
-      <ReactRouterLink to="/search" component={Link}>Search</ReactRouterLink>
+      <ReactRouterLink to="/browse" component={Link}>Browse</ReactRouterLink>
       <Routes>
-        <Route path="/search" element={<SearchContainer />} />
+        <Route path="/browse" element={<SearchContainer />} />
         <Route path="/:productionTitle" element={<ProductionContainer />} />
       </Routes>
     </Router>
