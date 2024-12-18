@@ -5,7 +5,7 @@ function SearchContainer() {
   const [productions, setProductions] = useState([]);
 
   useEffect(() => {
-    fetch("https://scene-it-api-52ad0b1f04cb.herokuapp.com/productions")
+    fetch("http://127.0.0.1:3000/productions")
       .then((res) => {
         if (!res.ok) {
           console.log('There was an error in fetching data');
@@ -23,9 +23,11 @@ function SearchContainer() {
   return (
     <div>
       <h1>Browse Films and Movies</h1>
+      <div class="cards-container">
       {productions.map((production) => (
         <SearchCard production={production} />
       ))}
+      </div>
     </div>
   );
 }
