@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import SearchCard from "./SearchCard.js";
-import styled from 'styled-components';
 
 function SearchContainer() {
   const [productions, setProductions] = useState([]);
@@ -21,15 +20,9 @@ function SearchContainer() {
       });
   }, []);
 
-  const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: #BF4F74;
-`;
-
   return (
     <div class="main">
-      <Title>Browse Films and Movies</Title>
+      <h1>Browse Films and Movies</h1>
       <div class="cards-container">
       {productions.map((production) => (
         <SearchCard production={production} />
