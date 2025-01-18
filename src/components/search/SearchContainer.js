@@ -26,7 +26,7 @@ function SearchContainer() {
   }, []);
 
   const handleSearch = (input) => {
-    let filteredProductions = productions.filter(production => production.title.includes(input))
+    let filteredProductions = productions.filter(production => production.title.toLowerCase().includes(input))
     setDisplayedProductions(filteredProductions)
   }
 
